@@ -24,4 +24,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UIViewController *destinationViewController = segue.destinationViewController;
+    destinationViewController.title = [sender currentTitle];
+    
+    if( [segue.identifier isEqualToString:@"RedDwarfSegue"]){
+        destinationViewController.view.backgroundColor = [UIColor redColor];
+    } else {
+        destinationViewController.view.backgroundColor = [UIColor blueColor];
+    }
+}
+
 @end
